@@ -5,7 +5,7 @@ const {join} = require('path');
 module.exports = {
   resolveLoader: {
     alias: {
-      'postcss-polymer-loader': join(__dirname, './../../../src/index.js'),
+      'postcss-polymer-loader': join(__dirname, './../../../../src/index.js'),
     }
   },
   module: {
