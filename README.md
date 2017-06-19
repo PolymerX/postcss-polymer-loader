@@ -1,5 +1,10 @@
 # PostCSS - Polymer Loader
 
+[![Build Status](https://travis-ci.org/PolymerX/postcss-polymer-loader.svg?branch=master&style=flat-square)](https://travis-ci.org/PolymerX/postcss-polymer-loader)
+[![Coverage Status](https://coveralls.io/repos/github/PolymerX/postcss-polymer-loader/badge.svg?branch=master&style=flat-square)](https://coveralls.io/github/PolymerX/postcss-polymer-loader?branch=master)
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/sindresorhus/xo)
+[![Polymer Skeleton](https://img.shields.io/badge/polymerX-SKELETON-435877.svg?style=flat-square)](https://github.com/PolymerX/polymer-skeleton)
+
 > PostCSS Webpack loader for Polymer elements. Works in combination with the awesome [wc-loader](https://github.com/aruntk/wc-loader).
 
 # Install
