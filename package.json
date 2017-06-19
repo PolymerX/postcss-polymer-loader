@@ -1,0 +1,68 @@
+{
+  "name": "postcss-polymer-loader",
+  "version": "0.0.0",
+  "description": "PostCSS loader for Polymer components",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "xo && nyc ava",
+    "test:integrations": "ava test/integrations",
+    "test:travis": "xo && nyc ava && nyc report --reporter=text-lcov | coveralls"
+  },
+  "xo": {
+    "space": true,
+    "rules": {
+      "eol-last": 0
+    },
+    "ignores": [
+      "test/integrations/**/*"
+    ]
+  },
+  "ava": {
+    "files": [
+      "test/**/*.test.js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LasaleFamine/postcss-polymer-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LasaleFamine/postcss-polymer-loader/issues"
+  },
+  "homepage": "https://github.com/LasaleFamine/postcss-polymer-loader#readme",
+  "author": "LasaleFamine",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 6"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "css",
+    "postcss",
+    "postcss-runner",
+    "webpack",
+    "webpack-loader",
+    "polymer",
+    "polymer-loader",
+    "polymer-loader-postcss",
+    "postcss-polymer-loader"
+  ],
+  "dependencies": {
+    "fs-extra": "^3.0.1",
+    "loader-utils": "^1.1.0",
+    "parse5": "^3.0.2",
+    "postcss": "^6.0.2",
+    "postcss-load-config": "^1.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "coveralls": "^2.13.1",
+    "execa": "^0.7.0",
+    "nyc": "^11.0.2",
+    "wc-loader": "^1.1.4",
+    "webpack": "^3.0.0",
+    "xo": "^0.18.2"
+  }
+}
