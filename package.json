@@ -1,6 +1,6 @@
 {
   "name": "postcss-polymer-loader",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "PostCSS loader for Polymer components",
   "main": "src/index.js",
   "scripts": {
@@ -24,13 +24,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/LasaleFamine/postcss-polymer-loader.git"
+    "url": "https://github.com/PolymerX/postcss-polymer-loader.git"
   },
   "bugs": {
-    "url": "https://github.com/LasaleFamine/postcss-polymer-loader/issues"
+    "url": "https://github.com/PolymerX/postcss-polymer-loader/issues"
   },
-  "homepage": "https://github.com/LasaleFamine/postcss-polymer-loader#readme",
-  "author": "LasaleFamine",
+  "homepage": "https://github.com/PolymerX/postcss-polymer-loader#readme",
+  "author": "LasaleFamine <info@godev.space>",
   "license": "MIT",
   "engines": {
     "node": ">= 6"
