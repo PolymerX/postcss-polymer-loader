@@ -50,11 +50,11 @@
     "postcss-polymer-loader"
   ],
   "dependencies": {
-    "fs-extra": "^3.0.1",
-    "loader-utils": "^1.1.0",
-    "parse5": "^3.0.2",
-    "postcss": "^6.0.2",
-    "postcss-load-config": "^1.2.0"
+    "fs-extra": "3.0.1",
+    "loader-utils": "1.1.0",
+    "parse5": "3.0.2",
+    "postcss": "6.0.2",
+    "postcss-load-config": "1.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
