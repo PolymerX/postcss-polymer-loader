@@ -1,9 +1,10 @@
 # PostCSS - Polymer Loader
 
+[![GitHub release](https://img.shields.io/github/release/PolymerX/postcss-polymer-loader.svg?style=flat-square)](https://github.com/PolymerX/postcss-polymer-loader)
 [![Build Status](https://travis-ci.org/PolymerX/postcss-polymer-loader.svg?branch=master&style=flat-square)](https://travis-ci.org/PolymerX/postcss-polymer-loader)
 [![Coverage Status](https://coveralls.io/repos/github/PolymerX/postcss-polymer-loader/badge.svg?branch=master&style=flat-square)](https://coveralls.io/github/PolymerX/postcss-polymer-loader?branch=master)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/sindresorhus/xo)
-[![Polymer Skeleton](https://img.shields.io/badge/polymerX-SKELETON-435877.svg?style=flat-square)](https://github.com/PolymerX/polymer-skeleton)
+[![Polymer Skeleton](https://img.shields.io/badge/polymerX-SKELETON-435877.svg?style=flat-square)](https://github.com/PolymerX/postcss-polymer-loader)
 
 > PostCSS Webpack loader for Polymer elements. Works in combination with the awesome [wc-loader](https://github.com/aruntk/wc-loader).
 
@@ -53,7 +54,7 @@ module.exports = {
 
 # Setup project
 
-As stated, this loader needs an HTML loader and precisely the [wc-laoder](https://github.com/aruntk/wc-loader) to load Web Components. More specifically we are talking about Polymer elements.
+As stated, this loader needs an HTML loader and precisely the [wc-loader](https://github.com/aruntk/wc-loader) to load Web Components. More specifically we are talking about Polymer elements.
 > NOTE: since the `wc-loader` works well with the Polymer 2.x version, the example will be written in Polymer 2 sintax, but the loader should work also with Polymer 1.x.
 
 ## Folder structure (example)
