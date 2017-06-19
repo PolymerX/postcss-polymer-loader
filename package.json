@@ -1,7 +1,7 @@
 {
   "name": "postcss-polymer-loader",
-  "version": "0.0.1",
-  "description": "PostCSS loader for Polymer components",
+  "version": "0.0.2",
+  "description": "PostCSS-Polymer loader for Webpack",
   "main": "src/index.js",
   "scripts": {
     "test": "xo && nyc ava",
