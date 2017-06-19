@@ -8,10 +8,10 @@ module.exports = (sources, resourcePath, config) => {
     return Promise.resolve([]);
   }
 
-  const plugins = Object.assign({}, config.plugins);
+  const plugins = config.plugins.slice();
   const options = Object.assign({}, config.options);
 
-  const hasPlugins = Object.keys(plugins).length > 0;
+  const hasPlugins = plugins.length > 0;
 
   const promises = sources.reduce((acc, sourcePath) => {
     return acc.concat(
