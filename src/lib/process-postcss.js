@@ -14,9 +14,7 @@ module.exports = (sources, resourcePath, config) => {
   const promises = sources.reduce((acc, sourcePath) => {
     return acc.concat(
       getPostcssFromFile(sourcePath, resourcePath)
-        .then(postcssFileContent => {
-          return postcss(plugins).process(postcssFileContent, options);
-        })
+        .then(postcssFileContent => postcss(plugins).process(postcssFileContent, options))
       );
   }, []);
 
