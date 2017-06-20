@@ -11,16 +11,11 @@ module.exports = (sources, resourcePath, config) => {
   const plugins = config.plugins.slice();
   const options = Object.assign({}, config.options);
 
-  const hasPlugins = plugins.length > 0;
-
   const promises = sources.reduce((acc, sourcePath) => {
     return acc.concat(
       getPostcssFromFile(sourcePath, resourcePath)
         .then(postcssFileContent => {
-          if (hasPlugins) {
-            return postcss(plugins).process(postcssFileContent);
-          }
-          return postcss().process(postcssFileContent, options);
+          return postcss(plugins).process(postcssFileContent, options);
         })
       );
   }, []);
