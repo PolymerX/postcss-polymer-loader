@@ -40,12 +40,24 @@ Add the loader to your `webpack` config:
 
 module.exports = {
   module: {
+
+    ...
+
     rules: [
+
+      ...
+
       {
+        test: /\.js$/,
+        use: ['babel-loader']  // For ES6 `import`
+      }, {
         test: /\.html$/,
         use: ['wc-loader', 'postcss-polymer-loader']
       }
     ]
+
+    ...
+
   }
 }
 
@@ -95,6 +107,8 @@ As stated, this loader needs an HTML loader and precisely the [wc-loader](https:
 
 'use strict';
 
+// import Polymer from 'polymer'; Aaaaaaaah if we could...!
+
 import './template.html';
 
 class AwesomeComponent extends Polymer.Element {
@@ -119,7 +133,6 @@ window.customElements.define(AwesomeComponent.is, AwesomeComponent);
 
 'use strict';
 
-// import Polymer from 'polymer'; Aaaaaaaah if we could...!
 import './src/awesome-component';
 
 ```
