@@ -4,10 +4,6 @@ const postcss = require('postcss');
 const getPostcssFromFile = require('./get-postcss-from-file');
 
 module.exports = (sources, resourcePath, config) => {
-  if (sources.length === 0) {
-    return Promise.resolve([]);
-  }
-
   const plugins = config.plugins.slice();
   const options = Object.assign({}, config.options);
 
