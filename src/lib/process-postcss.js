@@ -1,18 +1,21 @@
-'use strict';
-
 const postcss = require('postcss');
-const getPostcssFromFile = require('./get-postcss-from-file');
+const sourceFrom = require('./get-postcss-from-file');
+const fullPath = require('./full-path');
 
-module.exports = (sources, resourcePath, config) => {
-  const plugins = config.plugins.slice();
-  const options = Object.assign({}, config.options);
+const opts = (file, resource, options) =>
+  Object.assign({}, options, {from: fullPath(file, resource)});
 
-  const promises = sources.reduce((acc, sourcePath) => {
-    return acc.concat(
-      getPostcssFromFile(sourcePath, resourcePath)
-        .then(postcssFileContent => postcss(plugins).process(postcssFileContent, options))
-      );
-  }, []);
+const process = (file, resource, config) =>
+  sourceFrom(file, resource)
+    .then(src =>
+      postcss(config.plugins)
+        .process(src, opts(file, resource, config.options))
+    );
 
-  return Promise.all(promises);
-};
+const processWith = (resource, config) => (acc, src) =>
+  acc.concat(process(src, resource, config));
+
+module.exports = (sources, resource, config) =>
+  Promise.all(
+    sources.reduce(processWith(resource, config), [])
+  );

@@ -1,10 +1,8 @@
-'use strict';
-
-const {join, basename} = require('path');
 const fs = require('fs-extra');
+const fullPath = require('./full-path');
 
-module.exports = (filePath, resourcePath) => {
-  const htmlFilename = basename(resourcePath);
-  const folderPath = resourcePath.replace(htmlFilename, '');
-  return fs.readFile(join(folderPath, filePath), 'utf8');
-};
+module.exports = (fp, rp) =>
+  fs.readFile(
+    fullPath(fp, rp),
+    'utf8'
+  );
