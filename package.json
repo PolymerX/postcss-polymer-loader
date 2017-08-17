@@ -57,13 +57,13 @@
     "postcss-load-config": "1.2.0"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.1",
-    "ava": "^0.19.1",
-    "coveralls": "^2.13.1",
-    "execa": "^0.7.0",
-    "nyc": "^11.0.2",
-    "wc-loader": "^1.1.4",
-    "webpack": "^3.0.0",
-    "xo": "^0.18.2"
+    "autoprefixer": "7.1.2",
+    "ava": "0.22.0",
+    "coveralls": "2.13.1",
+    "execa": "0.8.0",
+    "nyc": "11.1.0",
+    "wc-loader": "1.1.12",
+    "webpack": "3.5.5",
+    "xo": "0.18.2"
   }
 }
