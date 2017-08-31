@@ -62,7 +62,7 @@
     "coveralls": "2.13.1",
     "execa": "0.8.0",
     "nyc": "11.1.0",
-    "wc-loader": "1.1.12",
+    "text-loader": "0.0.1",
     "webpack": "3.5.5",
     "xo": "0.18.2"
   }
