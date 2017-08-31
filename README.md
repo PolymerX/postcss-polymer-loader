@@ -6,7 +6,7 @@
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/sindresorhus/xo)
 [![postcss-polymer-loader](https://img.shields.io/badge/polymerX-postcss--polymer--loader-%23435877.svg?style=flat-square)](https://github.com/PolymerX/postcss-polymer-loader)
 
-> PostCSS Webpack loader for Polymer elements. Works in combination with the awesome [wc-loader](https://github.com/aruntk/wc-loader).
+> PostCSS Webpack loader for HTML templates (usually for Polymer 3.x). Works in combination with the [text-loader](https://www.npmjs.com/package/text-loader).
 
 # Install
 
@@ -47,12 +47,9 @@ module.exports = {
 
       ...
 
-      {
-        test: /\.js$/,
-        use: ['babel-loader']  // For ES6 `import`
-      }, {
+     {
         test: /\.html$/,
-        use: ['wc-loader', 'postcss-polymer-loader']
+        use: ['text-loader', 'postcss-polymer-loader']
       }
     ]
 
@@ -66,8 +63,7 @@ module.exports = {
 
 # Setup project
 
-As stated, this loader needs an HTML loader and precisely the [wc-loader](https://github.com/aruntk/wc-loader) to load Web Components. More specifically we are talking about Polymer elements.
-> NOTE: since the `wc-loader` works well with the Polymer 2.x version, the example will be written in Polymer 2 sintax, but the loader should work also with Polymer 1.x.
+As stated, this loader needs an text loader to load the HTML template, like the [text-loader](https://www.npmjs.com/package/text-loader). More specifically you can load an `HTML` template from and external file and use it within a Polymer 3.x `template`.
 
 ## Folder structure (example)
 
@@ -86,33 +82,24 @@ As stated, this loader needs an HTML loader and precisely the [wc-loader](https:
 ## `awesome-component/template.html` (example)
 
 ```html
+<postcss src="./../global-style.postcss"></postcss>
+<postcss src="./style.postcss"></postcss>
 
-<!-- This should be resolved by the `wc-loader` -->
-<link rel="import" src="./path/to/polymer.html">
-
-<dom-module id="awesome-component">
-  <postcss src="./../global-style.postcss"></postcss>
-  <postcss src="./style.postcss"></postcss>
-  <template>
-    <div class="TestDivOne"></div>
-    <div class="TestDivTwo"></div>
-  </template>
-</dom-module>
-
+<div>
+  <div class="TestDivOne"></div>
+  <div class="TestDivTwo"></div>
+</div>
 ```
 
 ## `awesome-component/index.js` (example)
 
 ```js
-
-'use strict';
-
 // import Polymer from 'polymer'; Aaaaaaaah if we could...!
 
-import './template.html';
+import {Element as PolymerElement} from '@polymer/polymer/polymer-element';
+import template from './template.html';
 
-class AwesomeComponent extends Polymer.Element {
-  static get is() { return 'awesome-component' };
+class AwesomeComponent extends PolymerElement {
   static get properties() {
     return {
         prop1: {
@@ -121,17 +108,19 @@ class AwesomeComponent extends Polymer.Element {
       }
     }
   };
+
+  static get template() {
+    return template;
+  };
 };
 
-window.customElements.define(AwesomeComponent.is, AwesomeComponent);
+window.customElements.define('awesome-component', AwesomeComponent);
 
 ```
 
 ## `main-entry.js` (example)
 
 ```js
-
-'use strict';
 
 import './src/awesome-component';
 
