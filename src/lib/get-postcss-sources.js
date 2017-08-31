@@ -1,7 +1,7 @@
 'use strict';
 
-module.exports = domModule => {
-  return domModule.childNodes.reduce((acc, item) => {
+module.exports = body => {
+  return body.childNodes.reduce((acc, item) => {
     if (item.nodeName !== 'postcss') {
       return acc;
     }

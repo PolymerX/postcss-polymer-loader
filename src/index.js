@@ -3,7 +3,7 @@
 const parse5 = require('parse5');
 const postcssrc = require('postcss-load-config');
 
-const getDomModule = require('./lib/get-dom-module');
+const getBody = require('./lib/get-body');
 const getPostcssSources = require('./lib/get-postcss-sources');
 const processPostcss = require('./lib/process-postcss');
 const fixTemplate = require('./lib/fix-template');
@@ -18,8 +18,8 @@ module.exports = function (source) {
   }
 
   const parsed = parse5.parse(source);
-  const domModule = getDomModule(parsed);
-  const sourcesFilePath = getPostcssSources(domModule);
+  const body = getBody(parsed);
+  const sourcesFilePath = getPostcssSources(body);
 
   postcssrc()
     .then(config => processPostcss(sourcesFilePath, htmlFilePath, config))
