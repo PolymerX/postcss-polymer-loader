@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [{
       test: /\.html$/,
-      loaders: ['wc-loader', 'postcss-polymer-loader']
+      loaders: ['text-loader', 'postcss-polymer-loader']
     }]
   }
 }

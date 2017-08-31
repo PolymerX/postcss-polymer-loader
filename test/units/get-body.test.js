@@ -1,7 +1,7 @@
 'use strict';
 
 import test from 'ava';
-import fn from './../../src/lib/get-dom-module';
+import fn from './../../src/lib/get-body';
 
 const PARSED = {
   childNodes: [
@@ -11,8 +11,7 @@ const PARSED = {
         {nodeName: 'another-something'},
         {nodeName: 'body',
           childNodes: [
-            {nodeName: 'double-something'},
-            {nodeName: 'dom-module', childNodes: [{nodeName: 'AWESOME'}]}
+            {nodeName: 'double-something'}
           ]
         }
       ]
@@ -21,7 +20,7 @@ const PARSED = {
 };
 
 test('return dom-module node correctly', t => {
-  const expected = {nodeName: 'dom-module', childNodes: [{nodeName: 'AWESOME'}]};
+  const expected = {nodeName: 'body', childNodes: [{nodeName: 'double-something'}]};
   const actual = fn(PARSED);
-  t.deepEqual(actual, expected, 'Dom module found');
+  t.deepEqual(actual, expected, 'Body found');
 });

@@ -37,13 +37,14 @@ const TMP_APPJS_BAD_HTML = join(TMP_DIR_BAD_HTML, 'app.js');
 test('correct run webpack and process postcss', async t => {
   await execa('webpack', [ENTRY, TMP_APPJS], {cwd: CWD_MAIN});
   const appJs = await readFile(TMP_APPJS, 'utf8');
-  t.true(appJs.includes('<template> <style>div{background:black;}p{color:red;}span{color:green;}</style>'), 'Correct compilation postcss');
+  t.true(appJs.includes('module.exports = "\\n<style>div {\\n  background: black;\\n}\\n\\np {\\n  color: red;\\n} span {\\n  color: green;\\n}</style>\\n<style>div {\\n  background: black;\\n}\\n\\np {\\n  color: red;\\n} span {\\n  color: green;\\n}</style>\\n<div>\\n  <div class=\\"TestDivOne\\"></div>\\n  <div class=\\"TestDivTwo\\"></div>\\n</div>\\n"'), 'Correct compilation postcss');
 });
 
 test('correct run webpack and configuration with plugin for postcss (autoprefixer)', async t => {
   await execa('webpack', [ENTRY_POSTCSS_PLUGINS, TMP_APPJS_POSTCSS_PLUGINS], {cwd: CWD_POSTCSS_PLUGINS});
   const appJs = await readFile(TMP_APPJS_POSTCSS_PLUGINS, 'utf8');
-  t.true(appJs.includes('<style>div{display:-webkit-box;display:-ms-flexbox;display:flex;}</style>'), 'Compile with plugins');
+  t.true(appJs.includes('module.exports = "<style>div {\\n  display: -webkit-box;\\n  display: -ms-flexbox;\\n  display: flex;\\n}</style>\\n<div>\\n    <div class=\\"TestDivOne\\"></div>\\n    <div class=\\"TestDivTwo\\"></div>\\n</div>"'), 'Compile with plugins');
+  t.true(appJs.includes(''), 'Compile with plugins');
 });
 
 test('handle without postcss tag, returning the source', async t => {
@@ -56,12 +57,6 @@ test('cb with error when style.postcss is not found', async t => {
   await t.throws(execa('webpack', [ENTRY_ERROR_PATH, TMP_APPJS_ERROR_PATH], {cwd: CWD_ERROR_PATH}));
   const appJs = await readFile(TMP_APPJS_ERROR_PATH, 'utf8');
   t.false(appJs.includes('<style>'), 'No compilation without <postcss> tags');
-});
-
-test('bad html, handling removing bad <postcss> tag return source', async t => {
-  await execa('webpack', [ENTRY_BAD_HTML, TMP_APPJS_BAD_HTML], {cwd: CWD_BAD_HTML});
-  const appJs = await readFile(TMP_APPJS_BAD_HTML, 'utf8');
-  t.false(appJs.includes('<postcss'), 'Removed <postcss> tags');
 });
 
 test.after(async t => {
