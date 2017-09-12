@@ -10,6 +10,7 @@ branches:
   only:
   - master
   - develop
+  - /^greenkeeper/.*$/
 
 script:
   - yarn test:travis
