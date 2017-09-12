@@ -1,5 +1,7 @@
 # PostCSS - Polymer Loader
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/PolymerX/postcss-polymer-loader.svg)](https://greenkeeper.io/)
+
 [![GitHub release](https://img.shields.io/github/release/PolymerX/postcss-polymer-loader.svg?style=flat-square)](https://github.com/PolymerX/postcss-polymer-loader)
 [![Build Status](https://travis-ci.org/PolymerX/postcss-polymer-loader.svg?branch=master&style=flat-square)](https://travis-ci.org/PolymerX/postcss-polymer-loader)
 [![Coverage Status](https://coveralls.io/repos/github/PolymerX/postcss-polymer-loader/badge.svg?branch=master&style=flat-square)](https://coveralls.io/github/PolymerX/postcss-polymer-loader?branch=master)
