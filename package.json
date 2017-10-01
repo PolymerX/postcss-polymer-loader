@@ -4,6 +4,7 @@
   "description": "PostCSS-Polymer loader for Webpack",
   "main": "src/index.js",
   "scripts": {
+    "release": "standard-version",
     "test": "xo && nyc ava",
     "test:integrations": "ava test/integrations",
     "test:travis": "xo && nyc ava && nyc report --reporter=text-lcov | coveralls"
