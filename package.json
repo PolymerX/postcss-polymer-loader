@@ -58,7 +58,7 @@
     "postcss-load-config": "1.2.0"
   },
   "devDependencies": {
-    "autoprefixer": "7.2.0",
+    "autoprefixer": "7.2.2",
     "ava": "0.24.0",
     "coveralls": "2.13.2",
     "execa": "0.8.0",
