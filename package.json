@@ -63,7 +63,7 @@
     "coveralls": "2.13.2",
     "execa": "0.8.0",
     "nyc": "11.4.1",
-    "standard-version": "4.2.0",
+    "standard-version": "4.3.0",
     "wc-loader": "1.1.12",
     "webpack": "3.10.0",
     "xo": "0.18.2"
