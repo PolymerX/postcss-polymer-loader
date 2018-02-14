@@ -66,6 +66,6 @@
     "standard-version": "4.3.0",
     "wc-loader": "1.1.12",
     "webpack": "3.11.0",
-    "xo": "0.18.2"
+    "xo": "0.20.1"
   }
 }
