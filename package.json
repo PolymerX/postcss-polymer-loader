@@ -65,7 +65,7 @@
     "nyc": "11.4.1",
     "standard-version": "4.3.0",
     "wc-loader": "1.1.12",
-    "webpack": "3.11.0",
+    "webpack": "4.5.0",
     "xo": "0.18.2"
   }
 }
